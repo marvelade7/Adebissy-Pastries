@@ -3,10 +3,6 @@ import { useState, useEffect } from 'react';
 const HeroSection = () => {
     const slides = [
         {
-            img: 'heroImg1.png',
-            gradient: 'bg-linear-to-br from-[#FFF6BD] to-[#999471]'
-        },
-        {
             img: 'heroImg2.png',
             gradient: 'bg-linear-to-br from-[#BFB890] to-[#D5D1B8]'
         },
@@ -17,15 +13,19 @@ const HeroSection = () => {
         {
             img: 'heroImg4.png',
             gradient: 'bg-linear-to-br from-[#999471] to-[#FFF6BD]'
-        }
+        },
+        {
+            img: 'heroImg1.png',
+            gradient: 'bg-linear-to-br from-[#FFF6BD] to-[#999471]'
+        },
     ]; // Add your image paths here
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    // 2. Automatically change the image index every 3 seconds
+    // 2. Automatically change the image index every 2 seconds
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-        }, 3000); 
+        }, 2000); 
 
         return () => clearInterval(interval); // Cleanup timer on unmount
     }, [slides.length]);
