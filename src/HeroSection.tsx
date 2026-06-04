@@ -32,25 +32,24 @@ const HeroSection = () => {
 
     return (
         <div>
-            <div className={`h-screen w-full ${slides[currentIndex]?.gradient || 'bg-linear-to-br from-[#FFF6BD] to-[#999471]'} flex items-center justify-center ps-25 pe-35 gap-20 relative overflow-hidden`}>
+            <div className={`min-h-screen w-full ${slides[currentIndex]?.gradient || 'bg-linear-to-br from-[#FFF6BD] to-[#999471]'} relative flex flex-col items-center justify-center gap-8 overflow-hidden px-4 pb-10 pt-28 sm:px-8 md:flex-row md:gap-12 md:px-12 md:pb-0 md:pt-24 lg:gap-20 lg:ps-25 lg:pe-35`}>
             {/* <div className='h-screen w-full bg-linear-to-br from-[#FFF6BD] to-[#999471] flex items-center justify-center ps-25 pe-35 gap-20 relative overflow-hidden'> */}
                 
-                <div className='w-1/2 z-10'>
-                    <h2 className='text-[4em] leading-20 font-bold'>Fresh Pastries and Tasty Treats Made for you</h2>
-                    <button className='bg-[#72462C] flex items-center gap-2 text-white py-3 px-15 w-auto mt-5 text-[1.3em] font-medium rounded-xl hover:bg-[#533320] cursor-pointer duration-300'>
+                <div className='z-10 w-full text-center md:w-1/2 md:text-left'>
+                    <h2 className='text-4xl leading-tight font-bold sm:text-5xl md:text-6xl lg:text-[4em] lg:leading-20'>Fresh Pastries and Tasty Treats Made for you</h2>
+                    <button className='mx-auto mt-5 flex w-auto items-center gap-2 rounded-xl bg-[#72462C] px-8 py-3 text-lg font-medium text-white hover:bg-[#533320] cursor-pointer duration-300 sm:px-12 md:mx-0 md:px-15 md:text-[1.3em]'>
                         Browse Menu <i className="bi bi-arrow-right font-bold mt-1"></i>
                     </button>
                 </div>
 
                 {/* 3. The Fading Carousel Wrapper for the main image */}
-                <div className='w-1/2 h-[600px] relative'>
+                <div className='relative h-[300px] w-full sm:h-[420px] md:h-[520px] md:w-1/2 lg:h-[600px]'>
                     {slides.map((slide, index) => (
                         <img
                             key={slide.img}
                             src={slide.img}
                             alt={`Pastry slide ${index + 1}`}
-                            style={{ width: '600px' }}
-                            className={`absolute inset-0 object-contain transition-opacity duration-1000 ease-in-out ${
+                            className={`absolute inset-0 mx-auto w-[280px] object-contain transition-opacity duration-1000 ease-in-out sm:w-[380px] md:w-[500px] lg:w-[600px] ${
                                 index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
                             }`}
                         />
@@ -58,10 +57,10 @@ const HeroSection = () => {
                 </div>
 
                 {/* Secondary Decorative Element */}
-                <img src="heroImg1-2.png" className='absolute top-0 right-0 w-1/4 z-0' alt="Decorative" />
+                <img src="heroImg1-2.png" className='absolute right-0 top-0 z-0 hidden w-1/4 sm:block' alt="Decorative" />
 
                 {/* WhatsApp Floating CTA Layout Button */}
-                <div className='absolute bottom-15 right-15 flex items-center gap-5 cursor-pointer z-20'>
+                <div className='absolute bottom-6 right-4 z-20 flex cursor-pointer items-center gap-3 sm:bottom-10 sm:right-8 md:bottom-15 md:right-15 md:gap-5'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="2.7em" viewBox="0 0 256 258">
                         <defs>
                             <linearGradient id="SVGK3KZq49U" x1="50%" x2="50%" y1="100%" y2="0%">

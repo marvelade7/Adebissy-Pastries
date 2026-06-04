@@ -7,14 +7,14 @@ interface ProductProps {
 const Product = ({title, description, price}: ProductProps ) => {
     return (
         <>
-            <div className="w-85  rounded-xl shadow-lg pb-1">
+            <div className="w-full rounded-xl pb-1 shadow-lg">
                 <img src='susage-roll.jpg' width="100%" className="rounded-t-xl" />
                 <div className="my-3 px-4">
-                    <h4 className="text-[1.3em] font-medium">{title}</h4>
-                    <p className="my-1">{description}</p>
-                    <div className="flex items-center justify-between my-4">
-                        <h3 className="text-[1.3em] font-medium">₦{price}</h3>
-                        <button className="py-2 px-8 bg-[#72462C] text-white rounded-[10px] font-medium cursor-pointer hover:bg-[#502f1c] active:bg-[#2b1a11] duration-300">Order</button>
+                    <h4 className="text-xl font-medium md:text-[1.3em]">{title}</h4>
+                    <p className="my-1 text-sm md:text-base">{description}</p>
+                    <div className="my-4 flex items-center justify-between gap-3">
+                        <h3 className="text-xl font-medium md:text-[1.3em]">₦{price}</h3>
+                        <button className="rounded-[10px] bg-[#72462C] px-5 py-2 text-sm font-medium text-white cursor-pointer duration-300 hover:bg-[#502f1c] active:bg-[#2b1a11] md:px-8 md:text-base">Order</button>
                     </div>
                 </div>
             </div>
