@@ -6,7 +6,7 @@ const Navbar = () => {
     const message = encodeURIComponent('Hello, I would like to place an order.'); // Customize the message  
     return (
         <>
-            <nav className='fixed top-4 left-3 right-3 md:top-8 md:left-8 md:right-8 lg:top-10 lg:left-35 lg:right-35 z-50 rounded-2xl md:rounded-full bg-[#999471] px-4 py-2 shadow-lg md:px-5 md:py-1'>
+            <nav data-aos='fade-down' data-aos-delay='100' className='fixed top-4 left-3 right-3 md:top-8 md:left-8 md:right-8 lg:top-10 lg:left-35 lg:right-35 z-50 rounded-2xl md:rounded-full bg-[#999471] px-4 py-2 shadow-lg md:px-5 md:py-1'>
                 <div className='flex items-center justify-between'>
                 <img src="logo.png" className='w-14 sm:w-16 md:w-[90px]' />
                 <ul className='hidden md:flex items-center gap-4 lg:gap-10'>
@@ -35,7 +35,7 @@ const Navbar = () => {
                 </div>
                 </div>
                 {menuOpen && (
-                    <ul className='mt-3 flex flex-col gap-2 rounded-xl bg-[#8d8868] p-3 md:hidden'>
+                    <ul data-aos='fade-down' data-aos-duration='450' className='mt-3 flex flex-col gap-2 rounded-xl bg-[#8d8868] p-3 md:hidden'>
                         <li className='text-[#72462C] font-medium cursor-pointer hover:opacity-75'>Home</li>
                         <li className='text-[#72462C] font-medium cursor-pointer hover:opacity-75'>Menu</li>
                         <li className='text-[#72462C] font-medium cursor-pointer hover:opacity-75'>About</li>

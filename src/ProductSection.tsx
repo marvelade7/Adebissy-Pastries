@@ -111,10 +111,12 @@ const ProductSection = () => {
     return (
         <>
             <div className="bg-[#F2F1E9] px-4 py-10 sm:px-8 lg:px-20">
-                <h1 className="mb-8 text-center text-4xl font-bold sm:mb-10 sm:text-5xl md:mb-12 md:text-[2.5em]">
+                <h1 data-aos="fade-up" className="mb-8 text-center text-4xl font-bold sm:mb-10 sm:text-5xl md:mb-12 md:text-[2.5em]">
                     Featured Products
                 </h1>
                 <div
+                    data-aos="fade-up"
+                    data-aos-delay="120"
                     className="cursor-grab overflow-hidden select-none active:cursor-grabbing"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
@@ -129,7 +131,12 @@ const ProductSection = () => {
                         style={{ transform: `translate3d(-${offset}px, 0, 0)` }}
                     >
                         {loopedProducts.map((product, index) => (
-                            <div className="flex-none w-75" key={`${product.title}-${index}`}>
+                            <div
+                                className="flex-none w-75"
+                                data-aos="fade-up"
+                                data-aos-delay={(index % products.length) * 70}
+                                key={`${product.title}-${index}`}
+                            >
                                 <Product
                                     title={product.title}
                                     description={product.description}
