@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 const Navbar = () => {
     const phoneNumber = '2347012893212'; // Replace with your phone number
