@@ -104,6 +104,23 @@ const ProductSection = () => {
         setOffset(normalizeOffset(dragStartOffsetRef.current - dragDelta));
     };
 
+    const onWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+        const delta = event.deltaX !== 0 ? event.deltaX : event.deltaY;
+        if (!delta) return;
+        // Convert vertical wheel to horizontal swipe when over carousel
+        event.preventDefault();
+        const WHEEL_MULTIPLIER = 1.4;
+        setOffset((prev) => normalizeOffset(prev + delta * WHEEL_MULTIPLIER));
+    };
+
+    const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+        if (event.key === 'ArrowLeft') {
+            setOffset((prev) => normalizeOffset(prev - ITEM_WIDTH));
+        } else if (event.key === 'ArrowRight') {
+            setOffset((prev) => normalizeOffset(prev + ITEM_WIDTH));
+        }
+    };
+
     const endDrag = () => {
         setIsDragging(false);
     };
@@ -111,12 +128,10 @@ const ProductSection = () => {
     return (
         <>
             <div className="bg-[#F2F1E9] px-4 py-10 sm:px-8 lg:px-20">
-                <h1 data-aos="fade-up" className="mb-8 text-center text-4xl font-bold sm:mb-10 sm:text-5xl md:mb-12 md:text-[2.5em]">
+                <h1 className="mb-8 text-center text-4xl font-bold sm:mb-10 sm:text-5xl md:mb-12 md:text-[2.5em]">
                     Featured Products
                 </h1>
                 <div
-                    data-aos="fade-up"
-                    data-aos-delay="120"
                     className="cursor-grab overflow-hidden select-none active:cursor-grabbing"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
@@ -124,6 +139,11 @@ const ProductSection = () => {
                     onPointerMove={onPointerMove}
                     onPointerUp={endDrag}
                     onPointerCancel={endDrag}
+                    onWheel={onWheel}
+                    onKeyDown={onKeyDown}
+                    tabIndex={0}
+                    role="region"
+                    aria-label="Product carousel"
                     style={{ touchAction: "pan-y" }}
                 >
                     <div

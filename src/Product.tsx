@@ -7,7 +7,7 @@ interface ProductProps {
 const Product = ({title, description, price}: ProductProps ) => {
     return (
         <>
-            <div className="w-full rounded-xl pb-1 shadow-lg">
+            <div className="w-full rounded-xl pb-1 my-5 shadow-lg">
                 <img src='susage-roll.jpg' width="100%" className="rounded-t-xl" />
                 <div className="my-3 px-4">
                     <h4 className="text-xl font-medium md:text-[1.3em]">{title}</h4>
