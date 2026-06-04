@@ -3,12 +3,13 @@ interface ProductProps {
     title: string;
     description: string;
     price: number;
+    image?: string;
 }
-const Product = ({title, description, price}: ProductProps ) => {
+const Product = ({title, description, price, image}: ProductProps ) => {
     return (
         <>
             <div className="w-full rounded-xl pb-1 my-5 shadow-lg">
-                <img src='susage-roll.jpg' width="100%" className="rounded-t-xl" />
+                <img src={image} width="100%" height='300' className="rounded-t-xl" />
                 <div className="my-3 px-4">
                     <h4 className="text-xl font-medium md:text-[1.3em]">{title}</h4>
                     <p className="my-1 text-sm md:text-base">{description}</p>

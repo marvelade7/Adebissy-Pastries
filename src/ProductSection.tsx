@@ -12,36 +12,43 @@ const ProductSection = () => {
             title: "Sausage Roll",
             description: "Flaky golden pastry filled with seasoned minced pork",
             price: 800,
+            image: 'sausage-roll.jpeg',
         },
         {
             title: "Meat Pie",
             description: "Buttery shortcrust pie packed with minced beef, potatoes, and carrots",
             price: 1200,
+            image: 'meat-pie.jpeg',
+        },
+        {
+            title: "Doughnut",
+            description: "Buttery shortcrust pie packed with minced beef, potatoes, and carrots",
+            price: 1200,
+            image: 'ring-doughnut.jpeg',
         },
         {
             title: "Chicken Pie",
             description: "Rich creamy chicken filling wrapped in a crisp baked pastry shell",
             price: 1400,
+            image: 'chicken-pie.jpeg',
         },
         {
-            title: "Puff Puff Bites",
+            title: "Puff Puff",
             description: "Soft airy fried dough balls dusted lightly with cinnamon sugar",
             price: 600,
-        },
-        {
-            title: "Croissant",
-            description: "Layered French butter pastry with a crisp crust and tender center",
-            price: 1500,
-        },
-        {
-            title: "Coconut Turnover",
-            description: "Sweet shredded coconut filling sealed in golden flaky pastry",
-            price: 1100,
+            image: 'puff-puff.jpeg',
         },
         {
             title: "Chin Chin Crunch",
             description: "Crunchy bite-size milk pastry cubes with a lightly sweet finish",
             price: 500,
+            image: 'chin-chin.jpg',
+        },
+        {
+            title: "Cake",
+            description: "Moist and fluffy layered cake with rich buttercream frosting",
+            price: 2500,
+            image: 'cake.jpeg',
         },
     ];
 
@@ -161,6 +168,7 @@ const ProductSection = () => {
                                     title={product.title}
                                     description={product.description}
                                     price={product.price}
+                                    image={product.image}
                                 />
                             </div>
                         ))}
