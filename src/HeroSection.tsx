@@ -43,13 +43,13 @@ const HeroSection = () => {
                 </div>
 
                 {/* 3. The Fading Carousel Wrapper for the main image */}
-                <div data-aos='zoom-in' data-aos-delay='180' className='relative h-[300px] w-full sm:h-[420px] md:h-[520px] md:w-1/2 lg:h-[600px]'>
+                <div data-aos='zoom-in' data-aos-delay='180' className='relative h-75 w-full sm:h-105 md:h-130 md:w-1/2 lg:h-150'>
                     {slides.map((slide, index) => (
                         <img
                             key={slide.img}
                             src={slide.img}
                             alt={`Pastry slide ${index + 1}`}
-                            className={`absolute inset-0 mx-auto w-[280px] object-contain transition-opacity duration-1000 ease-in-out sm:w-[380px] md:w-[500px] lg:w-[600px] ${
+                            className={`absolute inset-0 mx-auto w-70 object-contain transition-opacity duration-1000 ease-in-out sm:w-95 md:w-125 lg:w-150 ${
                                 index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
                             }`}
                         />
