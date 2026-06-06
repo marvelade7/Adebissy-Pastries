@@ -4,13 +4,16 @@ import HeroSection from './HeroSection';
 import Navbar from './Navbar';
 import ProductSection from './ProductSection';
 import AOS from 'aos';
+import About from './About';
+import WhyChooseUs from './WhyChooseUs';
+import DeliveryInformation from './DeliveryInformation';
 
 const App = () => {
   useEffect(() => {
     AOS.init({
       duration: 700,
       easing: 'ease-out-cubic',
-      once: true,
+      once: false,
       offset: 40,
       delay: 0,
       anchorPlacement: 'top-bottom',
@@ -18,11 +21,14 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <div className='bg-[#F2F1E9]'>
       <Navbar />
       <HeroSection />
       <ProductSection />
-    </>
+      <About/>
+      <WhyChooseUs/>
+      <DeliveryInformation/>
+    </div>
   );
 };
 
