@@ -9,16 +9,16 @@ const WhyChooseUs = () => {
                     <p data-aos='fade-up' data-aos-delay='420' className='text-lg'>Delicious snacks and treats that fit your budget without compromising quality.</p>
                 </div>
                 
-                <div data-aos='fade-up' data-aos-delay='820' className='w-full border border-[#72462c83] rounded-2xl py-6 px-6  bg-[#FFFEF7]'>
-                    <img data-aos='fade-up' data-aos-delay='820' src="./heroImg3.png" width="200" className='mx-auto mb-5' />
-                    <h4 data-aos='fade-up' data-aos-delay='820' className='text-2xl font-medium my-4'>Freshly Baked Goodness</h4>
-                    <p data-aos='fade-up' data-aos-delay='820' className='text-lg'>Every Pastry is made fresh to give you the best taste in every bite.</p>
+                <div data-aos='fade-up' data-aos-delay='620' className='w-full border border-[#72462c83] rounded-2xl py-6 px-6  bg-[#FFFEF7]'>
+                    <img data-aos='fade-up' data-aos-delay='620' src="./heroImg3.png" width="200" className='mx-auto mb-5' />
+                    <h4 data-aos='fade-up' data-aos-delay='620' className='text-2xl font-medium my-4'>Freshly Baked Goodness</h4>
+                    <p data-aos='fade-up' data-aos-delay='620' className='text-lg'>Every Pastry is made fresh to give you the best taste in every bite.</p>
                 </div>
                 
-                <div data-aos='fade-up' data-aos-delay='900' className='w-full border border-[#72462c83] rounded-2xl py-6 px-6  bg-[#FFFEF7]'>
-                    <img data-aos='fade-up' data-aos-delay='900' src="./heroImg3.png" width="200" className='mx-auto mb-5' />
-                    <h4 data-aos='fade-up' data-aos-delay='900' className='text-2xl font-medium my-4'>Fast & Easy Ordering</h4>
-                    <p data-aos='fade-up' data-aos-delay='900' className='text-lg'>Order quickly through Whatsapp, Phone Calls or Instagram DM, and get your cravings sorted.</p>
+                <div data-aos='fade-up' data-aos-delay='300' className='w-full border border-[#72462c83] rounded-2xl py-6 px-6  bg-[#FFFEF7]'>
+                    <img data-aos='fade-up' data-aos-delay='300' src="./heroImg3.png" width="200" className='mx-auto mb-5' />
+                    <h4 data-aos='fade-up' data-aos-delay='300' className='text-2xl font-medium my-4'>Fast & Easy Ordering</h4>
+                    <p data-aos='fade-up' data-aos-delay='300' className='text-lg'>Order quickly through Whatsapp, Phone Calls or Instagram DM, and get your cravings sorted.</p>
                 </div>
             </div>
         </div>
