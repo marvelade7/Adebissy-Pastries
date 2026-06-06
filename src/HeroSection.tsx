@@ -31,7 +31,7 @@ const HeroSection = () => {
     }, [slides.length]);
 
     return (
-        <div>
+        <section id='home' className='scroll-mt-28 md:scroll-mt-32'>
             <div className={`min-h-screen w-full ${slides[currentIndex]?.gradient || 'bg-linear-to-br from-[#FFF6BD] to-[#999471]'} relative flex flex-col items-center justify-center gap-8 overflow-hidden px-4 pb-10 pt-28 sm:px-8 md:flex-row md:gap-12 md:px-12 md:pb-0 md:pt-24 lg:gap-20 lg:ps-25 lg:pe-35`}>
             {/* <div className='h-screen w-full bg-linear-to-br from-[#FFF6BD] to-[#999471] flex items-center justify-center ps-25 pe-35 gap-20 relative overflow-hidden'> */}
                 
@@ -60,7 +60,7 @@ const HeroSection = () => {
                 <img data-aos='fade-left' data-aos-delay='260' src="heroImg1-2.png" className='absolute right-0 top-0 z-0 hidden w-1/4 sm:block' alt="Decorative" />
 
                 {/* WhatsApp Floating CTA Layout Button */}
-                <div data-aos='fade-up' data-aos-delay='320' className='absolute bottom-6 right-4 z-20 flex cursor-pointer items-center gap-3 sm:bottom-10 sm:right-8 md:bottom-15 md:right-15 md:gap-5'>
+                <div data-aos='fade-up' data-aos-delay='320' className='fixed bottom-6 right-4 z-50 flex cursor-pointer items-center gap-3 sm:bottom-10 sm:right-8 md:bottom-15 md:right-15 md:gap-5'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="2.7em" viewBox="0 0 256 258">
                         <defs>
                             <linearGradient id="SVGK3KZq49U" x1="50%" x2="50%" y1="100%" y2="0%">
@@ -78,7 +78,7 @@ const HeroSection = () => {
                     </svg>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

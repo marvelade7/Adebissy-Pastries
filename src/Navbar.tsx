@@ -1,20 +1,82 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
     const phoneNumber = '2348134794011'; // Replace with your phone number
     const message = encodeURIComponent('Hello, I would like to place an order.'); // Customize the message  
+
+    const navItems = [
+        { label: 'Home', href: '#home' },
+        { label: 'Menu', href: '#menu' },
+        { label: 'About', href: '#about' },
+        { label: 'Delivery', href: '#delivery' },
+        { label: 'Contact', href: '#contact' },
+    ];
+
+    const scrollToSection = (sectionId: string) => {
+        const section = document.getElementById(sectionId);
+
+        if (!section) {
+            return;
+        }
+
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setMenuOpen(false);
+    };
+
+    useEffect(() => {
+        const heroSection = document.getElementById('home');
+        let lastScrollY = window.scrollY;
+
+        const updateNavbarVisibility = () => {
+            const currentScrollY = window.scrollY;
+            const heroIsVisible = heroSection
+                ? heroSection.getBoundingClientRect().bottom > 0
+                : currentScrollY < 120;
+
+            if (heroIsVisible || currentScrollY < 120) {
+                setIsVisible(true);
+                setMenuOpen(false);
+                lastScrollY = currentScrollY;
+                return;
+            }
+
+            if (currentScrollY > lastScrollY + 12) {
+                setIsVisible(false);
+                setMenuOpen(false);
+            } else if (currentScrollY < lastScrollY - 12) {
+                setIsVisible(true);
+            }
+
+            lastScrollY = currentScrollY;
+        };
+
+        updateNavbarVisibility();
+        window.addEventListener('scroll', updateNavbarVisibility, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', updateNavbarVisibility);
+        };
+    }, []);
+
     return (
         <>
-            <nav data-aos='fade-down' data-aos-delay='100' className='fixed top-4 left-3 right-3 md:top-8 md:left-8 md:right-8 lg:top-5 lg:left-35 lg:right-35 z-50 rounded-2xl md:rounded-full bg-[#999471] px-4 py-2 shadow-lg md:px-5 md:py-1'>
+            <nav
+                data-aos='fade-down'
+                data-aos-delay='100'
+                className={`fixed top-4 left-3 right-3 md:top-8 md:left-8 md:right-8 lg:top-5 lg:left-35 lg:right-35 z-50 rounded-2xl md:rounded-full bg-[#999471] px-4 py-2 shadow-lg md:px-5 md:py-1 transform-gpu will-change-transform transition-[transform,opacity] duration-500 ease-in-out motion-reduce:transition-none ${
+                    isVisible ? 'translate-y-0 opacity-100' : '-translate-y-24 opacity-0 pointer-events-none'
+                }`}
+            >
                 <div className='flex items-center justify-between'>
                 <img src="logo.png" className='w-14 sm:w-16 md:w-22.5' />
                 <ul className='hidden md:flex items-center gap-4 lg:gap-10'>
-                    <li className='text-white font-medium cursor-pointer hover:opacity-75'>Home</li>
-                    <li className='text-white font-medium cursor-pointer hover:opacity-75'>Menu</li>
-                    <li className='text-white font-medium cursor-pointer hover:opacity-75'>About</li>
-                    <li className='text-white font-medium cursor-pointer hover:opacity-75'>Delivery</li>
-                    <li className='text-white font-medium cursor-pointer hover:opacity-75'>Contact</li>
+                    {navItems.map((item) => (
+                        <li key={item.label} className='text-white font-medium cursor-pointer hover:opacity-75'>
+                            <button type='button' onClick={() => scrollToSection(item.href.slice(1))}>{item.label}</button>
+                        </li>
+                    ))}
                 </ul>
                 <div className='flex items-center gap-3'>
                     <a href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer" className='bg-[#F9CA46] rounded-[25px] px-4 py-2 text-sm font-medium cursor-pointer hover:border hover:border-[#F9CA46] hover:text-[#F9CA46] hover:bg-transparent md:px-7 md:text-base'>Order Now</a>
@@ -36,11 +98,11 @@ const Navbar = () => {
                 </div>
                 {menuOpen && (
                     <ul data-aos='fade-down' data-aos-duration='450' className='mt-3 flex flex-col gap-2 rounded-xl bg-[#8d8868] p-3 md:hidden'>
-                        <li className='text-[#72462C] font-medium cursor-pointer hover:opacity-75'>Home</li>
-                        <li className='text-[#72462C] font-medium cursor-pointer hover:opacity-75'>Menu</li>
-                        <li className='text-[#72462C] font-medium cursor-pointer hover:opacity-75'>About</li>
-                        <li className='text-[#72462C] font-medium cursor-pointer hover:opacity-75'>Delivery</li>
-                        <li className='text-[#72462C] font-medium cursor-pointer hover:opacity-75'>Contact</li>
+                        {navItems.map((item) => (
+                            <li key={item.label} className='text-[#72462C] font-medium cursor-pointer hover:opacity-75'>
+                                <button type='button' onClick={() => scrollToSection(item.href.slice(1))}>{item.label}</button>
+                            </li>
+                        ))}
                     </ul>
                 )}
             </nav>

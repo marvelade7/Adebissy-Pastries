@@ -1,9 +1,10 @@
 const Footer = () => {
     return (
         <footer
+            id='contact'
             data-aos='fade-up'
             data-aos-duration='800'
-            className='w-full px-4 pt-10 pb-15 sm:px-8 md:py-15 lg:px-20'
+            className='scroll-mt-28 md:scroll-mt-32 w-full px-4 pt-10 pb-15 sm:px-8 md:py-15 lg:px-20'
         >
             <div className='flex w-full flex-col gap-10 lg:flex-row lg:items-start lg:justify-between'>
                 <div data-aos='fade-up' data-aos-delay='100' className='flex-2'>
@@ -16,11 +17,11 @@ const Footer = () => {
                 <div data-aos='fade-up' data-aos-delay='200' className='flex-1'>
                     <h3 className='mb-4 text-lg font-semibold text-[#522E1F] md:text-xl'>Quick Links</h3>
                     <ul>
-                        <li className='mb-3 text-md text-[#522E1F] md:text-lg'>Home</li>
-                        <li className='mb-3 text-md text-[#522E1F] md:text-lg'>Menu</li>
-                        <li className='mb-3 text-md text-[#522E1F] md:text-lg'>About</li>
-                        <li className='mb-3 text-md text-[#522E1F] md:text-lg'>Delivery</li>
-                        <li className='mb-3 text-md text-[#522E1F] md:text-lg'>Contact</li>
+                        <li className='mb-3 text-md text-[#522E1F] md:text-lg'><a href='#home' className='hover:opacity-75'>Home</a></li>
+                        <li className='mb-3 text-md text-[#522E1F] md:text-lg'><a href='#menu' className='hover:opacity-75'>Menu</a></li>
+                        <li className='mb-3 text-md text-[#522E1F] md:text-lg'><a href='#about' className='hover:opacity-75'>About</a></li>
+                        <li className='mb-3 text-md text-[#522E1F] md:text-lg'><a href='#delivery' className='hover:opacity-75'>Delivery</a></li>
+                        <li className='mb-3 text-md text-[#522E1F] md:text-lg'><a href='#contact' className='hover:opacity-75'>Contact</a></li>
                     </ul>
                 </div>
 

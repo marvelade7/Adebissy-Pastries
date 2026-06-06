@@ -22,8 +22,8 @@ const App = () => {
     });
   }, []);
 
-  return (
-    <div className='bg-[#F2F1E9]'>
+    return (
+    <div className='bg-[#F2F1E9] scroll-smooth'>
       <Navbar />
       <HeroSection />
       <ProductSection />

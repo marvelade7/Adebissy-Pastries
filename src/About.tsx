@@ -1,6 +1,6 @@
 const About = () => {
     return (
-        <div className='flex flex-col-reverse w-full items-stretch gap-5 px-4 py-15 sm:px-8 lg:px-20 md:flex-row md:gap-10'>
+        <section id='about' className='scroll-mt-28 md:scroll-mt-32 flex flex-col-reverse w-full items-stretch gap-5 px-4 py-15 sm:px-8 lg:px-20 md:flex-row md:gap-10'>
             <div className="relative mx-auto w-full  sm:max-w-none">
                 <img data-aos='fade-up' data-aos-delay='300' src="./aboutImg11.jpg" width="100%" className="h-auto rounded-[20px]" />
                 <div className="absolute inset-0 rounded-[20px] bg-black/45" />
@@ -18,7 +18,7 @@ const About = () => {
                 </p>
                 <img data-aos='fade-up' data-aos-delay='600' src="./aboutImg2.jpg" width="900" alt="About Adebissy's Pastries" className="rounded-[20px] hidden md:block" />
             </div>
-        </div>
+        </section>
     );
 };
 
