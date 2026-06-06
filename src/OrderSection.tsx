@@ -7,7 +7,7 @@ const OrderSection = () => {
             <p data-aos="fade-up" data-aos-delay="200" className="md:text-xl text-lg w-full md:w-3/5 my-4 mx-auto">Whether you're craving a quick snack or ordering treats for a special occasion, we're ready to serve you fresh, delicious pastries, made with care.</p>
             <div data-aos="fade-up" data-aos-delay="300" className="flex items-center justify-center gap-7 mt-6">
                 <a href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer">
-                    <svg data-aos="fade-up" data-aos-delay="300" className='cursor-pointer hover:-translate-y-1.75 duration-300' xmlns="http://www.w3.org/2000/svg" width="3em" height="2.7em" viewBox="0 0 256 258">
+                    <svg data-aos="fade-up" data-aos-delay="300" className='cursor-pointer hover:-translate-y-1.75 duration-300 active:scale-120' xmlns="http://www.w3.org/2000/svg" width="3em" height="2.7em" viewBox="0 0 256 258">
                         <defs>
                             <linearGradient id="SVGK3KZq49U" x1="50%" x2="50%" y1="100%" y2="0%">
                                 <stop offset="0%" stop-color="#1faf38" />
@@ -23,7 +23,7 @@ const OrderSection = () => {
                         <path fill="#fff" d="M96.678 74.148c-2.386-5.303-4.897-5.41-7.166-5.503c-1.858-.08-3.982-.074-6.104-.074c-2.124 0-5.575.799-8.492 3.984c-2.92 3.188-11.148 10.892-11.148 26.561s11.413 30.813 13.004 32.94c1.593 2.123 22.033 35.307 54.405 48.073c26.904 10.609 32.379 8.499 38.218 7.967c5.84-.53 18.844-7.702 21.497-15.139c2.655-7.436 2.655-13.81 1.859-15.142c-.796-1.327-2.92-2.124-6.105-3.716s-18.844-9.298-21.763-10.361c-2.92-1.062-5.043-1.592-7.167 1.597c-2.124 3.184-8.223 10.356-10.082 12.48c-1.857 2.129-3.716 2.394-6.9.801c-3.187-1.598-13.444-4.957-25.613-15.806c-9.468-8.442-15.86-18.867-17.718-22.056c-1.858-3.184-.199-4.91 1.398-6.497c1.431-1.427 3.186-3.719 4.78-5.578c1.588-1.86 2.118-3.187 3.18-5.311c1.063-2.126.531-3.986-.264-5.579c-.798-1.593-6.987-17.343-9.819-23.64" />
                     </svg>
                 </a>
-                <svg data-aos='fade-up' data-aos-delay='500' className='cursor-pointer hover:-translate-y-1.75 duration-300' xmlns="http://www.w3.org/2000/svg" width="3em" height="2.5em" viewBox="0 0 256 256">
+                <svg data-aos='fade-up' data-aos-delay='500' className='cursor-pointer hover:-translate-y-1.75 duration-300 active:scale-120' xmlns="http://www.w3.org/2000/svg" width="3em" height="2.5em" viewBox="0 0 256 256">
                     <path d="M0 0h256v256H0z" fill="none" />
                     <g fill="none">
                         <rect width="256" height="256" fill="url(#SVGKdMMobCR)" rx="60" />
@@ -44,8 +44,17 @@ const OrderSection = () => {
                         </defs>
                     </g>
                 </svg>
+                <a href="">
+                    <svg data-aos='fade-up' data-aos-delay='500' className='cursor-pointer hover:-translate-y-1.75 duration-300 active:scale-120' xmlns="http://www.w3.org/2000/svg" width="3em" height="2.3em" viewBox="0 0 256 290">
+                        <path d="M0 0h256v290H0z" fill="none" />
+                        <path fill="#ff004f" d="M189.72 104.421c18.678 13.345 41.56 21.197 66.273 21.197v-47.53a67 67 0 0 1-13.918-1.456v37.413c-24.711 0-47.59-7.851-66.272-21.195v96.996c0 48.523-39.356 87.855-87.9 87.855c-18.113 0-34.949-5.473-48.934-14.86c15.962 16.313 38.222 26.432 62.848 26.432c48.548 0 87.905-39.332 87.905-87.857v-96.995zm17.17-47.952c-9.546-10.423-15.814-23.893-17.17-38.785v-6.113h-13.189c3.32 18.927 14.644 35.097 30.358 44.898M69.673 225.607a40 40 0 0 1-8.203-24.33c0-22.192 18.001-40.186 40.21-40.186a40.3 40.3 0 0 1 12.197 1.883v-48.593c-4.61-.631-9.262-.9-13.912-.801v37.822a40.3 40.3 0 0 0-12.203-1.882c-22.208 0-40.208 17.992-40.208 40.187c0 15.694 8.997 29.281 22.119 35.9" />
+                        <path d="M175.803 92.849c18.683 13.344 41.56 21.195 66.272 21.195V76.631c-13.794-2.937-26.005-10.141-35.186-20.162c-15.715-9.802-27.038-25.972-30.358-44.898h-34.643v189.843c-.079 22.132-18.049 40.052-40.21 40.052c-13.058 0-24.66-6.221-32.007-15.86c-13.12-6.618-22.118-20.206-22.118-35.898c0-22.193 18-40.187 40.208-40.187c4.255 0 8.356.662 12.203 1.882v-37.822c-47.692.985-86.047 39.933-86.047 87.834c0 23.912 9.551 45.589 25.053 61.428c13.985 9.385 30.82 14.86 48.934 14.86c48.545 0 87.9-39.335 87.9-87.857z" />
+                        <path fill="#00f2ea" d="M242.075 76.63V66.516a66.3 66.3 0 0 1-35.186-10.047a66.47 66.47 0 0 0 35.186 20.163M176.53 11.57a68 68 0 0 1-.728-5.457V0h-47.834v189.845c-.076 22.13-18.046 40.05-40.208 40.05a40.06 40.06 0 0 1-18.09-4.287c7.347 9.637 18.949 15.857 32.007 15.857c22.16 0 40.132-17.918 40.21-40.05V11.571zM99.966 113.58v-10.769a89 89 0 0 0-12.061-.818C39.355 101.993 0 141.327 0 189.845c0 30.419 15.467 57.227 38.971 72.996c-15.502-15.838-25.053-37.516-25.053-61.427c0-47.9 38.354-86.848 86.048-87.833" />
+                    </svg>
+
+                </a>
                 <a href={`tel:${phoneNumber}`}>
-                    <svg data-aos='fade-up' data-aos-delay='700' className='cursor-pointer hover:-translate-y-1.75 duration-300' xmlns="http://www.w3.org/2000/svg" width="3em" height="2.7em" viewBox="0 0 24 24">
+                    <svg data-aos='fade-up' data-aos-delay='700' className='cursor-pointer hover:-translate-y-1.75 duration-300 active:scale-120' xmlns="http://www.w3.org/2000/svg" width="3em" height="2.7em" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0z" fill="none" />
                         <path fill="#00c3d0" d="M13 8a3 3 0 0 1 3 3a1 1 0 0 0 2 0a5 5 0 0 0-5-5a1 1 0 0 0 0 2" />
                         <path fill="#00c3d0" d="M13 4a7 7 0 0 1 7 7a1 1 0 0 0 2 0a9 9 0 0 0-9-9a1 1 0 0 0 0 2m8.75 11.91a1 1 0 0 0-.72-.65l-6-1.37a1 1 0 0 0-.92.26c-.14.13-.15.14-.8 1.38a9.9 9.9 0 0 1-4.87-4.89C9.71 10 9.72 10 9.85 9.85a1 1 0 0 0 .26-.92L8.74 3a1 1 0 0 0-.65-.72a4 4 0 0 0-.72-.18A4 4 0 0 0 6.6 2A4.6 4.6 0 0 0 2 6.6A15.42 15.42 0 0 0 17.4 22a4.6 4.6 0 0 0 4.6-4.6a5 5 0 0 0-.06-.76a4.3 4.3 0 0 0-.19-.73" />

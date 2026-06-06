@@ -65,12 +65,12 @@ const Navbar = () => {
             <nav
                 data-aos='fade-down'
                 data-aos-delay='100'
-                className={`fixed top-4 left-3 right-3 md:top-8 md:left-8 md:right-8 lg:top-5 lg:left-35 lg:right-35 z-50 rounded-2xl md:rounded-full bg-[#999471] px-4 py-2 shadow-lg md:px-5 md:py-1 transform-gpu will-change-transform transition-[transform,opacity] duration-500 ease-in-out motion-reduce:transition-none ${
+                className={`fixed top-4 left-2 right-2 md:top-8 md:left-8 md:right-8 lg:top-5 lg:left-35 lg:right-35 z-50 rounded-2xl md:rounded-full bg-[#999471] px-4 py-1 shadow-lg md:px-5 md:py-1 transform-gpu will-change-transform transition-[transform,opacity] duration-500 ease-in-out motion-reduce:transition-none ${
                     isVisible ? 'translate-y-0 opacity-100' : '-translate-y-24 opacity-0 pointer-events-none'
                 }`}
             >
                 <div className='flex items-center justify-between'>
-                <img src="logo.png" className='w-14 sm:w-16 md:w-22.5' />
+                <img src="logo.png" className='w-15 sm:w-17 md:w-23.5' />
                 <ul className='hidden md:flex items-center gap-4 lg:gap-10'>
                     {navItems.map((item) => (
                         <li key={item.label} className='text-white font-medium cursor-pointer hover:opacity-75'>
@@ -79,14 +79,14 @@ const Navbar = () => {
                     ))}
                 </ul>
                 <div className='flex items-center gap-3'>
-                    <a href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer" className='bg-[#F9CA46] rounded-[25px] px-4 py-2 text-sm font-medium cursor-pointer hover:border hover:border-[#F9CA46] hover:text-[#F9CA46] hover:bg-transparent md:px-7 md:text-base'>Order Now</a>
+                    <a href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer" className='bg-[#F9CA46] text-[#72462C] font-bold md:rounded-[25px] rounded-[7px] px-2 md:py-2 py-2 text-sm cursor-pointer hover:border hover:border-[#F9CA46] hover:text-[#F9CA46] hover:bg-transparent md:px-7 md:text-base'>Order Now</a>
                     <button
                         type='button'
-                        className='text-[#72462C] md:hidden'
+                        className='text-[#72462C]  md:hidden'
                         onClick={() => setMenuOpen((prev) => !prev)}
                         aria-label='Toggle navigation menu'
                     >
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' className='h-7 w-7 fill-current'>
+                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' className='h-6 w-6 fill-current'>
                             {menuOpen ? (
                                 <path d='M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 1 0 5.7 7.11L10.59 12 5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4Z' />
                             ) : (
@@ -97,7 +97,7 @@ const Navbar = () => {
                 </div>
                 </div>
                 {menuOpen && (
-                    <ul data-aos='fade-down' data-aos-duration='450' className='mt-3 flex flex-col gap-2 rounded-xl bg-[#8d8868] p-3 md:hidden'>
+                    <ul data-aos='fade-down' data-aos-duration='450' className='mt-3 flex flex-col gap-4 rounded-xl bg-[#8d8868] p-3 md:hidden'>
                         {navItems.map((item) => (
                             <li key={item.label} className='text-[#72462C] font-medium cursor-pointer hover:opacity-75'>
                                 <button type='button' onClick={() => scrollToSection(item.href.slice(1))}>{item.label}</button>

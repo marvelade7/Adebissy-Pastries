@@ -39,9 +39,11 @@ const HeroSection = () => {
                 
                 <div data-aos='fade-right' data-aos-delay='120' className='z-10 w-full text-center md:w-1/2 md:text-left'>
                     <h2 className='text-4xl leading-tight font-bold sm:text-5xl md:text-6xl lg:text-[4em] lg:leading-20'>Fresh Pastries and Tasty Treats Made for you</h2>
-                    <button data-aos='fade-up' data-aos-delay='220' className='mx-auto mt-5 flex w-auto items-center gap-2 rounded-xl bg-[#72462C] px-8 py-3 text-lg font-medium text-white hover:bg-[#533320] cursor-pointer duration-300 sm:px-12 md:mx-0 md:px-15 md:text-[1.3em]'>
+                    <a href="#menu">
+                        <button data-aos='fade-up' data-aos-delay='220'  className='mx-auto mt-5 flex w-auto items-center gap-2 rounded-xl bg-[#72462C] px-8 py-3 text-lg font-medium text-white hover:bg-[#533320] cursor-pointer duration-300 sm:px-12 md:mx-0 md:px-15 md:text-[1.3em]'>
                         Browse Menu <i className="bi bi-arrow-right font-bold mt-1"></i>
                     </button>
+                    </a>
                 </div>
 
                 {/* 3. The Fading Carousel Wrapper for the main image */}
