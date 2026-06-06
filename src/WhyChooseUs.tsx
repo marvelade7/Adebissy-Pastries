@@ -10,7 +10,7 @@ const WhyChooseUs = () => {
                 </div>
                 
                 <div data-aos='fade-up' data-aos-delay='620' className='w-full border border-[#72462c83] rounded-2xl py-6 px-6  bg-[#FFFEF7]'>
-                    <img data-aos='fade-up' data-aos-delay='620' src="./order2.png" width="300" className='mx-auto mb-5' />
+                    <img data-aos='fade-up' data-aos-delay='620' src="./order2.png" width="500" className='mx-auto mb-10' />
                     <h4 data-aos='fade-up' data-aos-delay='620' className='text-2xl font-medium my-4'>Freshly Baked Goodness</h4>
                     <p data-aos='fade-up' data-aos-delay='620' className='text-lg'>Every Pastry is made fresh to give you the best taste in every bite.</p>
                 </div>

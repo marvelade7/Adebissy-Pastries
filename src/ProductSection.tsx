@@ -17,25 +17,25 @@ const ProductSection = () => {
         {
             title: "Meat Pie",
             description: "Buttery shortcrust pie packed with minced beef, potatoes, and carrots",
-            price: 1200,
+            price: 1000,
             image: 'meat-pie.jpeg',
         },
         {
             title: "Doughnut",
             description: "Buttery shortcrust pie packed with minced beef, potatoes, and carrots",
-            price: 1200,
+            price: 700,
             image: 'ring-doughnut.jpeg',
         },
         {
             title: "Chicken Pie",
             description: "Rich creamy chicken filling wrapped in a crisp baked pastry shell",
-            price: 1400,
+            price: 1000,
             image: 'chicken-pie.jpeg',
         },
         {
             title: "Puff Puff",
             description: "Soft airy fried dough balls dusted lightly with cinnamon sugar",
-            price: 600,
+            price: 200,
             image: 'puff-puff.jpeg',
         },
         {

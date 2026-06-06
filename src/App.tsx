@@ -8,6 +8,7 @@ import About from './About';
 import WhyChooseUs from './WhyChooseUs';
 import DeliveryInformation from './DeliveryInformation';
 import OrderSection from './OrderSection';
+import Footer from './Footer';
 
 const App = () => {
   useEffect(() => {
@@ -30,6 +31,7 @@ const App = () => {
       <WhyChooseUs/>
       <DeliveryInformation/>
       <OrderSection/>
+      <Footer/>
     </div>
   );
 };
