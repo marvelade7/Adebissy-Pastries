@@ -7,13 +7,14 @@ import AOS from 'aos';
 import About from './About';
 import WhyChooseUs from './WhyChooseUs';
 import DeliveryInformation from './DeliveryInformation';
+import OrderSection from './OrderSection';
 
 const App = () => {
   useEffect(() => {
     AOS.init({
       duration: 700,
       easing: 'ease-out-cubic',
-      once: true,
+      once: false,
       offset: 40,
       delay: 0,
       anchorPlacement: 'top-bottom',
@@ -28,6 +29,7 @@ const App = () => {
       <About/>
       <WhyChooseUs/>
       <DeliveryInformation/>
+      <OrderSection/>
     </div>
   );
 };

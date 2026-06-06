@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const phoneNumber = '2347012893212'; // Replace with your phone number
+    const phoneNumber = '2348134794011'; // Replace with your phone number
     const message = encodeURIComponent('Hello, I would like to place an order.'); // Customize the message  
     return (
         <>
-            <nav data-aos='fade-down' data-aos-delay='100' className='fixed top-4 left-3 right-3 md:top-8 md:left-8 md:right-8 lg:top-10 lg:left-35 lg:right-35 z-50 rounded-2xl md:rounded-full bg-[#999471] px-4 py-2 shadow-lg md:px-5 md:py-1'>
+            <nav data-aos='fade-down' data-aos-delay='100' className='fixed top-4 left-3 right-3 md:top-8 md:left-8 md:right-8 lg:top-5 lg:left-35 lg:right-35 z-50 rounded-2xl md:rounded-full bg-[#999471] px-4 py-2 shadow-lg md:px-5 md:py-1'>
                 <div className='flex items-center justify-between'>
                 <img src="logo.png" className='w-14 sm:w-16 md:w-22.5' />
                 <ul className='hidden md:flex items-center gap-4 lg:gap-10'>
@@ -17,7 +17,7 @@ const Navbar = () => {
                     <li className='text-white font-medium cursor-pointer hover:opacity-75'>Contact</li>
                 </ul>
                 <div className='flex items-center gap-3'>
-                    <a href={`https://wa.me/${phoneNumber}?text=${message}`} className='bg-[#F9CA46] rounded-[25px] px-4 py-2 text-sm font-medium cursor-pointer hover:border hover:border-[#F9CA46] hover:text-[#F9CA46] hover:bg-transparent md:px-7 md:text-base'>Order Now</a>
+                    <a href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer" className='bg-[#F9CA46] rounded-[25px] px-4 py-2 text-sm font-medium cursor-pointer hover:border hover:border-[#F9CA46] hover:text-[#F9CA46] hover:bg-transparent md:px-7 md:text-base'>Order Now</a>
                     <button
                         type='button'
                         className='text-[#72462C] md:hidden'
