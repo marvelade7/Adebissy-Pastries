@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
-    const phoneNumber: string = '2348134794011'; // Replace with your phone number
-    const message: string = encodeURIComponent('Hello, I would like to place an order.'); // Customize the message
+    const phoneNumber: string = '2348134794011';
+    const message = encodeURIComponent('Hello,\n\n My name is ... \n\nI would like to place an order.');
     const slides = [
         {
             img: 'heroImg2.png',

@@ -1,4 +1,6 @@
 const Footer = () => {
+    const phoneNumber = '2348134794011';
+    const message = encodeURIComponent('Hello,\n\n My name is ... \n\nI would like to place an order.');
     return (
         <footer
             id='contact'
@@ -27,16 +29,16 @@ const Footer = () => {
 
                 <div data-aos='fade-up' data-aos-delay='300' className='flex-1'>
                     <h3 className='text-lg font-semibold text-[#522E1F] md:text-xl'>Phone Number</h3>
-                    <p className='mb-3 text-md text-[#522E1F] md:text-lg'>+23481 3479 4011</p>
+                    <a href="tel:+2348134794011" target="_blank" rel="noopener noreferrer" className='mb-3 text-md text-[#522E1F] hover:opacity-75 md:text-lg'>+23481 3479 4011</a>
 
                     <h3 className='mt-4 text-lg font-semibold text-[#522E1F] md:text-xl'>Whatsapp</h3>
-                    <p className='mb-3 text-md text-[#522E1F] md:text-lg'>+23481 3479 4011</p>
+                    <a href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer" className="hover:opacity-75">+23481 3479 4011</a>
 
                     <h3 className='mt-4 text-lg font-semibold text-[#522E1F] md:text-xl'>Instagram</h3>
-                    <p className='mb-3 text-md text-[#522E1F] md:text-lg'>debissys</p>
+                    <a href="https://www.instagram.com/debissys?igsh=b3E4cWJ5MjdrMXB6" target="_blank" rel="noopener noreferrer" className='mb-3 text-md text-[#522E1F] md:text-lg hover:opacity-75'>debissys</a>
 
                     <h3 className='mt-4 text-lg font-semibold text-[#522E1F] md:text-xl'>Tik Tok</h3>
-                    <p className='mb-3 text-md text-[#522E1F] md:text-lg'>Adebissy&apos;s pastries</p>
+                    <a href="https://vm.tiktok.com/ZS92361ALyXNh-5J9Rw/" target="_blank" rel="noopener noreferrer" className='mb-3 text-md text-[#522E1F] md:text-lg hover:opacity-75'>Adebissy&apos;s pastries</a>
                 </div>
 
                 <div data-aos='fade-up' data-aos-delay='400' className='flex-1'>

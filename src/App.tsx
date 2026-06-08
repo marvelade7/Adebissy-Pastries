@@ -15,7 +15,7 @@ const App = () => {
     AOS.init({
       duration: 700,
       easing: 'ease-out-cubic',
-      once: false,
+      once: true,
       offset: 40,
       delay: 0,
       anchorPlacement: 'top-bottom',
