@@ -27,6 +27,12 @@ const ProductSection = () => {
             image: 'ring-doughnut.jpeg',
         },
         {
+            title: "Foil Cake",
+            description: "Dense and decadent chocolate cake with a glossy chocolate ganache glaze",
+            price: 2000,
+            image: 'foil-cake.jpeg',
+        },
+        {
             title: "Chicken Pie",
             description: "Rich creamy chicken filling wrapped in a crisp baked pastry shell",
             price: 1000,
@@ -47,7 +53,7 @@ const ProductSection = () => {
         {
             title: "Cake",
             description: "Moist and fluffy layered cake with rich buttercream frosting",
-            price: 2500,
+            price: 20000,
             image: 'cake.jpeg',
         },
     ];
