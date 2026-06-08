@@ -1,6 +1,7 @@
 const Footer = () => {
     const phoneNumber = '2348134794011';
-    const message = encodeURIComponent('Hello,\n\n My name is ... \n\nI would like to place an order.');
+    const message = encodeURIComponent('Hello,\n My name is ... \nI would like to place an order.');
+    const year: number = new Date().getFullYear()
     return (
         <footer
             id='contact'
@@ -49,6 +50,9 @@ const Footer = () => {
                     <p className='mb-3 text-md text-[#522E1F] md:text-lg'>Closed</p>
                 </div>
             </div>
+                <div className="text-[#522E1F] text-center md:mt-20 mt-8 font-medium md:text-lg text-[.9em]">
+                    &copy; copyrights {year} ADEBISSY'S PASTRIES. All Rights Reserved.
+                </div>
         </footer>
     );
 };

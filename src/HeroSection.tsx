@@ -65,7 +65,7 @@ const HeroSection = () => {
 
                 {/* WhatsApp Floating CTA Layout Button */}
                 <a data-aos='fade-up' data-aos-delay='320' href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer" className='fixed bottom-6 right-4 z-50 flex cursor-pointer items-center gap-3 sm:bottom-10 sm:right-8 md:bottom-15 md:right-15 md:gap-5 hover:scale-120 hover:opacity-90 transition-transform duration-500 active:scale-140'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="2.7em" viewBox="0 0 256 258">
+                    <svg xmlns="http://www.w3.org/2000/svg"  className='md:w-[3em] w-[2.3em] md:h-[2.7em] h-[2em]' viewBox="0 0 256 258">
                         <defs>
                             <linearGradient id="SVGK3KZq49U" x1="50%" x2="50%" y1="100%" y2="0%">
                                 <stop offset="0%" stop-color="#1faf38" />
