@@ -1,6 +1,6 @@
 const OrderSection = () => {
     const phoneNumber = '2348134794011'; // Replace with your phone number
-    const message = encodeURIComponent('Hello,\n\n My name is ... \n\nI would like to place an order.'); // Customize the message
+    const message = encodeURIComponent('Hello,\n My name is ... \nI would like to place an order.'); // Customize the message
     return (
         <div data-aos="fade-up" className='bg-linear-to-br from-[#FFF6BD] to-[#999471] px-4 py-13 sm:px-8 lg:px-20 lg:py-20 text-center'>
             <h2 data-aos="fade-up" data-aos-delay="100" className="md:text-3xl text-2xl font-medium mb-4">Ready To Place Your Order?</h2>

@@ -5,7 +5,20 @@ interface ProductProps {
     price: number;
     image?: string;
 }
+
 const Product = ({ title, description, price, image }: ProductProps) => {
+    const phoneNumber = '2348134794011';
+
+    const handleOrderClick = () => {
+        const customerName = window.prompt('Enter your name for the order message')?.trim();
+        const name = customerName || '...';
+        const message = encodeURIComponent(
+            `Hii, my name is ${name}. I want to order a ${title.toLowerCase()}.`
+        );
+
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <>
             <div className="w-full rounded-xl pb-2 my-5 shadow-lg">
@@ -15,7 +28,13 @@ const Product = ({ title, description, price, image }: ProductProps) => {
                     <p className="my-3 text-md md:text-lg">{description}</p>
                     <div className="my-6 flex items-center justify-between gap-3">
                         <h3 className="text-xl font-medium md:text-[1.3em]">₦{price}</h3>
-                        <button className="rounded-[10px] bg-[#72462C] px-5 py-2 text-sm font-medium text-white cursor-pointer duration-300 hover:bg-[#502f1c] active:bg-[#2b1a11] md:px-8 md:text-base">Order</button>
+                        <button
+                            type="button"
+                            onClick={handleOrderClick}
+                            className="rounded-[10px] bg-[#72462C] px-5 py-2 text-sm font-medium text-white cursor-pointer duration-300 hover:bg-[#502f1c] active:bg-[#2b1a11] md:px-8 md:text-base"
+                        >
+                            Order
+                        </button>
                     </div>
                 </div>
             </div>

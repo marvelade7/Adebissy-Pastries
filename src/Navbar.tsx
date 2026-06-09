@@ -4,7 +4,7 @@ const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const phoneNumber = '2348134794011'; // Replace with your phone number
-    const message = encodeURIComponent('Hello, I would like to place an order.'); // Customize the message  
+    const message = encodeURIComponent('Hello, my name is ... \nI would like to place an order.'); // Customize the message  
 
     const navItems = [
         { label: 'Home', href: '#home' },

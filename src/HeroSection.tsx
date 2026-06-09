@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
     const phoneNumber: string = '2348134794011';
-    const message = encodeURIComponent('Hello,\n\n My name is ... \n\nI would like to place an order.');
+    const message = encodeURIComponent('Hello,\n My name is ... \nI would like to place an order.');
     const slides = [
         {
             img: 'heroImg2.png',
