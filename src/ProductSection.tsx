@@ -1,5 +1,11 @@
 import Product from "./Product";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+
+type SelectedProduct = {
+    title: string;
+    price: number;
+};
 
 const ProductSection = () => {
     const CARD_WIDTH = 300;
@@ -64,6 +70,9 @@ const ProductSection = () => {
     const [offset, setOffset] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState<SelectedProduct | null>(null);
+    const [customerName, setCustomerName] = useState('');
+    const [quantity, setQuantity] = useState(1);
 
     const dragStartXRef = useRef(0);
     const dragStartOffsetRef = useRef(0);
@@ -138,6 +147,114 @@ const ProductSection = () => {
         setIsDragging(false);
     };
 
+    const closeOrderModal = () => {
+        setSelectedProduct(null);
+        setCustomerName('');
+        setQuantity(1);
+    };
+
+    const handleQuantityChange = (value: string) => {
+        const parsedQuantity = Number.parseInt(value, 10);
+
+        if (Number.isNaN(parsedQuantity) || parsedQuantity < 1) {
+            setQuantity(1);
+            return;
+        }
+
+        setQuantity(parsedQuantity);
+    };
+
+    const handleWhatsAppOrder = () => {
+        if (!selectedProduct) {
+            return;
+        }
+
+        const phoneNumber = '2348134794011';
+        const name = customerName.trim() || '...';
+        const totalPrice = selectedProduct.price * quantity;
+        const productName = selectedProduct.title.toLowerCase();
+        const pluralSuffix = quantity > 1 ? 's' : '';
+        const message = encodeURIComponent(
+            `Hii, my name is ${name}. I want to order ${quantity} ${productName}${pluralSuffix}. Total price is ₦${totalPrice}.`
+        );
+
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank', 'noopener,noreferrer');
+        closeOrderModal();
+    };
+
+    const orderModal = selectedProduct && typeof document !== 'undefined'
+        ? createPortal(
+            <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
+                onClick={closeOrderModal}
+            >
+                <div
+                    className="w-full max-w-md rounded-2xl bg-white p-5 shadow-2xl sm:p-6"
+                    onClick={(event) => event.stopPropagation()}
+                >
+                    <div className="mb-4 flex items-start justify-between gap-4">
+                        <div>
+                            <p className="text-[.7em] font-semibold uppercase tracking-[0.2em] text-[#72462C]/70">Place Order</p>
+                            <h3 className="mt-1 text-xl font-bold text-[#522E1F]">{selectedProduct.title}</h3>
+                        </div>
+                        <button
+                            type="button"
+                            onClick={closeOrderModal}
+                            className="rounded-full bg-[#72462C]/10 px-3 py-1 text-lg font-semibold text-[#72462C] transition hover:bg-[#72462C]/20"
+                            aria-label="Close order modal"
+                        >
+                            ×
+                        </button>
+                    </div>
+
+                    <div className="space-y-4">
+                        <label className="block">
+                            <span className="mb-1 block text-sm font-medium text-[#522E1F]">Your Name</span>
+                            <input
+                                type="text"
+                                value={customerName}
+                                onChange={(event) => setCustomerName(event.target.value)}
+                                placeholder="Enter your name"
+                                className="w-full rounded-2xl border border-[#72462C]/20 bg-white px-4 py-3 text-[#522E1F] outline-none transition placeholder:text-[#72462C]/40 focus:border-[#72462C]"
+                            />
+                        </label>
+
+                        <label className="block">
+                            <span className="mb-1 block text-sm font-medium text-[#522E1F]">Quantity</span>
+                            <input
+                                type="number"
+                                min="1"
+                                value={quantity}
+                                onChange={(event) => handleQuantityChange(event.target.value)}
+                                className="w-full rounded-2xl border border-[#72462C]/20 bg-white px-4 py-3 text-[#522E1F] outline-none transition placeholder:text-[#72462C]/40 focus:border-[#72462C]"
+                            />
+                        </label>
+
+                        <div className="rounded-2xl bg-[#72462C]/5 p-4">
+                            <div className="flex items-center justify-between gap-4 text-[.7em] sm:text-sm">
+                                <span className="text-[#522E1F]/70">Unit Price</span>
+                                <span className="font-semibold text-[#522E1F]">₦{selectedProduct.price}</span>
+                            </div>
+                            <div className="mt-2 flex items-center justify-between gap-4 text-[.7em] sm:text-sm">
+                                <span className="text-[#522E1F]/70">Total Price</span>
+                                <span className="text-lg font-bold text-[#72462C]">₦{selectedProduct.price * quantity}</span>
+                            </div>
+                        </div>
+
+                        <button
+                            type="button"
+                            onClick={handleWhatsAppOrder}
+                            className="w-full rounded-2xl bg-[#72462C] px-5 py-3 text-base font-semibold cursor-pointer text-white transition duration-300 hover:bg-[#502f1c] active:bg-[#2b1a11]"
+                        >
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>,
+            document.body
+        )
+        : null;
+
     return (
         <section id="menu" className="scroll-mt-28 md:scroll-mt-32 bg-[#F2F1E9] px-4 py-10 sm:px-8 lg:px-20 lg:py-20">
                 <h1 data-aos="fade-up" data-aos-delay="100" className="my-8 text-center md:text-4xl text-2xl font-bold sm:mb-10 sm:text-5xl md:mb-12 md:text-[2.5em]">
@@ -176,11 +293,13 @@ const ProductSection = () => {
                                     description={product.description}
                                     price={product.price}
                                     image={product.image}
+                                    onOrderClick={() => setSelectedProduct({ title: product.title, price: product.price })}
                                 />
                             </div>
                         ))}
                     </div>
                 </div>
+                {orderModal}
         </section>
     );
 };
