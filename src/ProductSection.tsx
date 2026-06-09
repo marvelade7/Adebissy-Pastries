@@ -175,7 +175,7 @@ const ProductSection = () => {
         const productName = selectedProduct.title.toLowerCase();
         const pluralSuffix = quantity > 1 ? 's' : '';
         const message = encodeURIComponent(
-            `Hii, my name is ${name}. I want to order ${quantity} ${productName}${pluralSuffix}. Total price is ₦${totalPrice}.`
+            `Hii, my name is ${name}. \nI would like to order ${quantity} ${productName}${pluralSuffix}. \nTotal price is ₦${totalPrice}.`
         );
 
         window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank', 'noopener,noreferrer');
