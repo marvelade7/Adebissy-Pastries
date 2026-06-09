@@ -27,7 +27,7 @@ const HeroSection = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-        }, 2000); 
+        }, 2000);
 
         return () => clearInterval(interval); // Cleanup timer on unmount
     }, [slides.length]);
@@ -35,14 +35,14 @@ const HeroSection = () => {
     return (
         <section id='home' className='scroll-mt-28 md:scroll-mt-32'>
             <div className={`min-h-screen w-full ${slides[currentIndex]?.gradient || 'bg-linear-to-br from-[#FFF6BD] to-[#999471]'} relative flex flex-col items-center justify-center gap-8 overflow-hidden px-4 pb-10 pt-28 sm:px-8 md:flex-row md:gap-12 md:px-12 md:pb-0 md:pt-24 lg:gap-20 lg:ps-25 lg:pe-35`}>
-            {/* <div className='h-screen w-full bg-linear-to-br from-[#FFF6BD] to-[#999471] flex items-center justify-center ps-25 pe-35 gap-20 relative overflow-hidden'> */}
-                
+                {/* <div className='h-screen w-full bg-linear-to-br from-[#FFF6BD] to-[#999471] flex items-center justify-center ps-25 pe-35 gap-20 relative overflow-hidden'> */}
+
                 <div data-aos='fade-right' data-aos-delay='120' className='z-10 w-full text-center md:w-1/2 md:text-left'>
                     <h2 className='text-4xl leading-tight font-bold sm:text-5xl md:text-6xl lg:text-[4em] lg:leading-20'>Fresh Pastries and Tasty Treats Made for you</h2>
                     <a href="#menu">
-                        <button data-aos='fade-up' data-aos-delay='220'  className='mx-auto mt-5 flex w-auto items-center gap-2 rounded-xl bg-[#72462C] px-8 py-3 text-lg font-medium text-white hover:bg-[#533320] cursor-pointer duration-300 sm:px-12 md:mx-0 md:px-15 md:text-[1.3em]'>
-                        Browse Menu <i className="bi bi-arrow-right font-bold mt-1"></i>
-                    </button>
+                        <button data-aos='fade-up' data-aos-delay='220' className='mx-auto mt-5 flex w-auto items-center gap-2 rounded-xl bg-[#72462C] px-8 py-3 text-lg font-medium text-white hover:bg-[#533320] cursor-pointer duration-300 sm:px-12 md:mx-0 md:px-15 md:text-[1.3em]'>
+                            Browse Menu <i className="bi bi-arrow-right font-bold mt-1"></i>
+                        </button>
                     </a>
                 </div>
 
@@ -53,9 +53,8 @@ const HeroSection = () => {
                             key={slide.img}
                             src={slide.img}
                             alt={`Pastry slide ${index + 1}`}
-                            className={`absolute inset-0 mx-auto w-70 object-contain transition-opacity duration-1000 ease-in-out sm:w-95 md:w-125 lg:w-150 ${
-                                index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                            }`}
+                            className={`absolute inset-0 mx-auto w-70 object-contain transition-opacity duration-1000 ease-in-out sm:w-95 md:w-125 lg:w-150 ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                                }`}
                         />
                     ))}
                 </div>
@@ -64,8 +63,8 @@ const HeroSection = () => {
                 <img data-aos='fade-left' data-aos-delay='260' src="heroImg1-2.png" className='absolute right-0 top-0 z-0 hidden w-1/4 sm:block' alt="Decorative" />
 
                 {/* WhatsApp Floating CTA Layout Button */}
-                <a data-aos='fade-up' data-aos-delay='320' href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer" className='fixed bottom-6 right-4 z-50 flex cursor-pointer items-center gap-3 sm:bottom-10 sm:right-8 md:bottom-15 md:right-15 md:gap-5 hover:scale-120 hover:opacity-90 transition-transform duration-500 active:scale-140'>
-                    <svg xmlns="http://www.w3.org/2000/svg"  className='md:w-[3em] w-[2.3em] md:h-[2.7em] h-[2em]' viewBox="0 0 256 258">
+                <a data-aos='fade-up' data-aos-delay='320' href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer" className='fixed bottom-8 right-5 z-50 flex cursor-pointer items-center gap-3 sm:bottom-10 sm:right-8 md:bottom-15 md:right-15 md:gap-5 hover:scale-120 hover:opacity-90 transition-transform duration-500 active:scale-140'>
+                    <svg xmlns="http://www.w3.org/2000/svg" className='md:w-[3em] w-[2.3em] md:h-[2.7em] h-[2em]' viewBox="0 0 256 258">
                         <defs>
                             <linearGradient id="SVGK3KZq49U" x1="50%" x2="50%" y1="100%" y2="0%">
                                 <stop offset="0%" stop-color="#1faf38" />

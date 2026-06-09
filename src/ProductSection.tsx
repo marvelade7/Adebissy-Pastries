@@ -140,7 +140,7 @@ const ProductSection = () => {
 
     return (
         <section id="menu" className="scroll-mt-28 md:scroll-mt-32 bg-[#F2F1E9] px-4 py-10 sm:px-8 lg:px-20 lg:py-20">
-                <h1 data-aos="fade-up" data-aos-delay="100" className="my-8 text-center md:text-4xl text-3xl font-bold sm:mb-10 sm:text-5xl md:mb-12 md:text-[2.5em]">
+                <h1 data-aos="fade-up" data-aos-delay="100" className="my-8 text-center md:text-4xl text-2xl font-bold sm:mb-10 sm:text-5xl md:mb-12 md:text-[2.5em]">
                     Featured Products
                 </h1>
                 <div
